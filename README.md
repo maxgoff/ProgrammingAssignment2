@@ -1,5 +1,28 @@
 ### Introduction
 
+This repo contains my solution for the second programming assignment, 
+the instructions for which appear below.
+
+You will find the modified version of cachematrix.R, which contains
+the code fixes to meet the specification for the assignment along
+along with useful inline comments.
+
+Please note that the makeCacheMatrix(x) function presumes an 
+invertible matrix is passed as the argument.  That said, the functions
+should behave as follows:
+
+>  source("cachematrix.R")  # load the functions into the environment
+>  x<- matrix(sample(1:1000,64),8,8)  # create an invertible matrix
+>  y<- makeCacheMatrix(x)    #  create the cache
+>  z<-cacheSolve(y)          #  the first instatiation will return
+                             #  the inverted matrix (i.e.: solve(x)
+                             #  and assigne to 'z' and will cache the results
+> z-prime<-cacheSolve(y)     #  will print out: getting cached data
+getting cached data          #  and will assign z-prime the cached matrix
+
+
+Original assignment instructions:
+
 This second programming assignment will require you to write an R
 function that is able to cache potentially time-consuming computations.
 For example, taking the mean of a numeric vector is typically a fast
