@@ -11,23 +11,21 @@ Please note that the makeCacheMatrix(x) function presumes an
 invertible matrix is passed as the argument.  That said, the functions
 should behave as follows:
 
-Rprompt>  source("cachematrix.R")  # load the functions into the environment
-Rprompt>  x<- matrix(sample(1:1000,64),8,8)  # create an invertible matrix
-Rprompt>  y<- makeCacheMatrix(x)    #  create the cache
+	Rprompt>  source("cachematrix.R")  # load the functions into the environment
+	Rprompt>  x<- matrix(sample(1:1000,64),8,8)  # create an invertible matrix
+	Rprompt>  y<- makeCacheMatrix(x)    #  create the cache
 
-#  the first instatiation of cacheSolve(y) will return
-#  the inverted matrix (i.e.: solve(x)
-#  and assign the value assign to 'z'.
-#  it will also cache the results
+	#  the first instatiation of cacheSolve(y) will return
+	#  the inverted matrix (i.e.: solve(x)
+	#  and assign the value assign to 'z'.
+	#  it will also cache the results
+	Rprompt>  z<-cacheSolve(y)          
 
-Rprompt>  z<-cacheSolve(y)          
-
-# subsequent instantiations of cacheSolve(y) for x
-# will fetch the inverted matrix from cache
-#  and will print out: getting cached data
-
-Rprompt> z-prime<-cacheSolve(y)     
-  getting cached data          
+	# subsequent instantiations of cacheSolve(y) for x
+	# will fetch the inverted matrix from cache
+	#  and will print out: getting cached data
+	Rprompt> z-prime<-cacheSolve(y)     
+	  getting cached data          
 
 
 Original assignment instructions:
